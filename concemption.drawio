@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-26T08:48:54.843Z" agent="5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="8YKhAsDLVHNdWfGyifKC" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-26T09:57:52.130Z" agent="5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="hfZMsh2yiYEbiwbkpb-_" version="14.2.7" type="github">
   <diagram id="Vvy8ZNYeZBU5IeqOEl0n" name="Page-1">
     <mxGraphModel dx="868" dy="2788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -71,7 +71,7 @@
           <mxGeometry x="30" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="F6hUvUynQKpErKbhB6TS-36" value="Carte" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
-          <mxGeometry x="630" y="-360" width="180" height="280" as="geometry" />
+          <mxGeometry x="630" y="-360" width="180" height="310" as="geometry" />
         </mxCell>
         <mxCell id="F6hUvUynQKpErKbhB6TS-37" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=1;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="F6hUvUynQKpErKbhB6TS-36" vertex="1">
           <mxGeometry y="30" width="180" height="30" as="geometry" />
@@ -384,6 +384,9 @@
         </mxCell>
         <mxCell id="0GbaRa2vzL1EdmuHABL2-2" value="rareté" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="1">
           <mxGeometry x="660" y="-125" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0GbaRa2vzL1EdmuHABL2-3" value="jeu" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="660" y="-90" width="150" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
