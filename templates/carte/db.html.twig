@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CarteController!{% endblock %}
+
+{% block body %}
+
+
+{% for carte in cartes %}
+    {% if carte.jeu == 'db' %}
+        <p>{{carte.nom}}</p><br>
+        <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}"><br>
+    {% endif %}
+{% endfor %}
+
+
+{% endblock %}
