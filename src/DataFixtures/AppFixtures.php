@@ -63,6 +63,7 @@ class AppFixtures extends Fixture
         $ygo->setType('[BÊTE DIVINE]');
         $ygo->setSerie('YGLD');
         $ygo->setNumero('FRG01');
+        $ygo->setJeu('ygo');
         $ygo->setNomphoto('slifer');
         $manager->persist($ygo);
         $manager->flush();
@@ -74,6 +75,7 @@ class AppFixtures extends Fixture
         $ygo1->setType('[BÊTE DIVINE]');
         $ygo1->setSerie('YGLD');
         $ygo1->setNumero('FRG02');
+        $ygo1->setJeu('ygo');
         $ygo1->setNomphoto('obelisk');
         $manager->persist($ygo1);
         $manager->flush();
@@ -85,6 +87,7 @@ class AppFixtures extends Fixture
         $ygo3->setType('[BÊTE DIVINE]');
         $ygo3->setSerie('YGLD');
         $ygo3->setNumero('FRG03');
+        $ygo3->setJeu('ygo');
         $ygo3->setNomphoto('ra');
         $manager->persist($ygo3);
         $manager->flush();
@@ -96,6 +99,7 @@ class AppFixtures extends Fixture
         $ygo4->setType('[MAGICIEN]');
         $ygo4->setSerie('YGLD');
         $ygo4->setNumero('FR03');
+        $ygo4->setJeu('ygo');
         $ygo4->setNomphoto('magicien');
         $manager->persist($ygo4);
         $manager->flush();
@@ -107,6 +111,7 @@ class AppFixtures extends Fixture
         $ygo2->setType('[DEMON/EFFET]');
         $ygo2->setSerie('YGLD');
         $ygo2->setNumero('FRB15');
+        $ygo2->setJeu('ygo');
         $ygo2->setNomphoto('kuriboh');
         $manager->persist($ygo2);
         $manager->flush();
@@ -126,6 +131,7 @@ class AppFixtures extends Fixture
         $db->setType('LEADER');
         $db->setSerie('BT1');
         $db->setNumero('3');
+        $db->setJeu('db');
         $db->setNomphoto('hitleader');
         $db->setRarete('UC');
         $manager->persist($db);
@@ -144,6 +150,7 @@ class AppFixtures extends Fixture
         $db1->setType('LEADER');
         $db1->setSerie('BT1');
         $db1->setNumero('30');
+        $db1->setJeu('db');
         $db1->setNomphoto('gokubleuleader');
         $db1->setRarete('UC');
         $manager->persist($db1);
@@ -158,6 +165,7 @@ class AppFixtures extends Fixture
         $db2->setType('LEADER');
         $db2->setSerie('BT1');
         $db2->setNumero('56');
+        $db2->setJeu('db');
         $db2->setNomphoto('gokudivinleader');
         $db2->setRarete('UC');
         $manager->persist($db2);
@@ -175,6 +183,7 @@ class AppFixtures extends Fixture
         $db3->setType('LEADER');
         $db3->setSerie('BT1');
         $db3->setNumero('58');
+        $db3->setJeu('db');
         $db3->setNomphoto('gohanleader');
         $db3->setRarete('UC');
         $manager->persist($db3);
@@ -193,6 +202,7 @@ class AppFixtures extends Fixture
         $db4->setType('LEADER');
         $db4->setSerie('BT1');
         $db4->setNumero('57');
+        $db4->setJeu('db');
         $db4->setNomphoto('brolyleader');
         $db4->setRarete('R');
         $manager->persist($db4);
