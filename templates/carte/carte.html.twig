@@ -9,6 +9,11 @@
     {% if carte.jeu == 'ygo' %}
         <p>{{carte.nom}}</p><br>
         <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}"><br>
+    {% elseif carte.jeu == 'db' %}
+        <p>{{carte.nom}}</p><br>
+        <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}"><br>
+    {% else %}
+        <h2>Aucun jeu correspondant</h2>
     {% endif %}
 {% endfor %}
 
