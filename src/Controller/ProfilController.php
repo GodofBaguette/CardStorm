@@ -25,7 +25,7 @@ class ProfilController extends AbstractController
     }
 
     /**
-     * @Route("/accueil/new", name="new_account")
+     * @Route("/new", name="new_account")
      */
     public function newAccount(Request $request, UserPasswordEncoderInterface $encode): Response
     {
@@ -39,6 +39,7 @@ class ProfilController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            $user->setRoles(["ROLE_USER"]);
             $user->setPassword($encode->encodePassword($user,$user->getPassword()));
             $entityManager->persist($user);
             $entityManager->flush();
