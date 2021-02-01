@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -48,6 +50,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=100)
      */
     private $prenom;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CarteCollection::class, mappedBy="user")
+     */
+    private $cartecollection;
+
+    public function __construct()
+    {
+        $this->cartecollection = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -159,6 +171,36 @@ class User implements UserInterface
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CarteCollection[]
+     */
+    public function getCartecollection(): Collection
+    {
+        return $this->cartecollection;
+    }
+
+    public function addCartecollection(CarteCollection $cartecollection): self
+    {
+        if (!$this->cartecollection->contains($cartecollection)) {
+            $this->cartecollection[] = $cartecollection;
+            $cartecollection->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCartecollection(CarteCollection $cartecollection): self
+    {
+        if ($this->cartecollection->removeElement($cartecollection)) {
+            // set the owning side to null (unless already changed)
+            if ($cartecollection->getUser() === $this) {
+                $cartecollection->setUser(null);
+            }
+        }
 
         return $this;
     }

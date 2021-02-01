@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CarteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -61,6 +63,16 @@ class Carte
      * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $nomphoto;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=CarteCollection::class, mappedBy="carte")
+     */
+    private $carteCollections;
+
+    public function __construct()
+    {
+        $this->carteCollections = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -171,6 +183,33 @@ class Carte
     public function setNomphoto(?string $nomphoto): self
     {
         $this->nomphoto = $nomphoto;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CarteCollection[]
+     */
+    public function getCarteCollections(): Collection
+    {
+        return $this->carteCollections;
+    }
+
+    public function addCarteCollection(CarteCollection $carteCollection): self
+    {
+        if (!$this->carteCollections->contains($carteCollection)) {
+            $this->carteCollections[] = $carteCollection;
+            $carteCollection->addCarte($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCarteCollection(CarteCollection $carteCollection): self
+    {
+        if ($this->carteCollections->removeElement($carteCollection)) {
+            $carteCollection->removeCarte($this);
+        }
 
         return $this;
     }
