@@ -12,6 +12,11 @@
 <h3>{{ user.nom }}</h3>
 <br>
 <h3>{{ user.prenom }}</h3>
+<br>
+<br>
+<a href="{{ path("accueil") }}">Accueil</a>
+<br>
+<a href="{{ path("update", {"pseudo" : user.pseudo}) }}">modifier le profil</a>
 
 
 {% endblock %}

@@ -10,6 +10,20 @@ use Symfony\Component\Routing\Annotation\Route;
 class CarteController extends AbstractController
 {
     /**
+     * @Route("/carte/{jeu}/{id}", name="carte_page")
+     */
+    public function carte(int $id): Response
+    {
+        $carte = $this->getDoctrine()
+        ->getRepository(Carte::class)
+        ->find($id);
+
+            return $this->render('carte/pagecarte.html.twig', [
+                'cartes' => $carte,
+            ]);
+    }
+
+    /**
      * @Route("/carte/{jeu}", name="carte")
      */
     public function show(string $jeu): Response

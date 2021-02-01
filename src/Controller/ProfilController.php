@@ -25,29 +25,32 @@ class ProfilController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new_account")
+     * @Route("/profil/{pseudo}/update", name="update")
      */
-    public function newAccount(Request $request, UserPasswordEncoderInterface $encode): Response
+    public function update(Request $request, UserPasswordEncoderInterface $encode): Response
     {
 
         $entityManager = $this->getDoctrine()->getManager();
+        
 
-        $user = new User();
+        $user = $this->getUser();
 
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
+
         if($form->isSubmitted() && $form->isValid()) {
-            $user->setRoles(["ROLE_USER"]);
             $user->setPassword($encode->encodePassword($user,$user->getPassword()));
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('profil', [
+                'pseudo' => $this->getUser()->getUsername()
+            ]);
         }
 
-        return $this->render('accueil/new.html.twig', [
+        return $this->render('profil/update.html.twig', [
             'formUser' => $form->createView()
         ]);
     }

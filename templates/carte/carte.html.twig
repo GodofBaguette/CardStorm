@@ -1,17 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarteController!{% endblock %}
+{% block title %}Hello CarteController moins!{% endblock %}
 
 {% block body %}
 
 
 {% for carte in cartes %}
     {% if carte.jeu == 'ygo' %}
-        <p>{{carte.nom}}</p><br>
-        <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}"><br>
+        <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
+            <p>{{carte.nom}}</p><br>
+            <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}" alt="image d'une carte Yu Gi Oh"><br>
+        </a>
     {% elseif carte.jeu == 'db' %}
-        <p>{{carte.nom}}</p><br>
-        <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}"><br>
+        <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
+            <p>{{carte.nom}}</p><br>
+            <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}" alt="image d'une carte dragon ball" width="200" ><br>
+        </a>
     {% else %}
         <h2>Aucun jeu correspondant</h2>
     {% endif %}
