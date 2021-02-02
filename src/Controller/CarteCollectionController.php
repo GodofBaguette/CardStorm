@@ -75,23 +75,28 @@ class CarteCollectionController extends AbstractController
     }
 
     /**
-     * @Route("/carte/{id}/addcard", name="addcard")
+     * @Route("/profil/{carte}/{collection}", name="addcard")
      */
-
-    public function addcard(Request $request, int $id): Response
+    public function addCard(int $carte, string $collection): Response
     {
-        $user = $this->getUser();
+        $entityManager = $this->getDoctrine()->getManager();
+
         $carte = $this->getDoctrine()
         ->getRepository(Carte::class)
-        ->find($id);
+        ->find($carte);
 
-        $collection = $user->getCarteCollections();
+        $ght = $this->getUser()->getCarteCollection();
 
-        $collection->addCarte($carte);
+        foreach($ght as $listes){
+            if($listes->getNom() === $collection){
+                $listes->addCarte($carte);
+                $entityManager->persist($listes);
+                $entityManager->flush();
+            }
+        }       
 
-        return $this->render('carte/pagecarte.html.twig', [
-            'collection' => $collection,
+        return $this->render('carte_collection/cartecollection.html.twig', [
+            'collections' => $collection,
         ]);
     }
-
 }

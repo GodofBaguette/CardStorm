@@ -6,8 +6,19 @@
 
 
 <h1>{{ cartes.nom }}</h1>
+        
+    {% for collection in collections %}
 
-<a href="{{ path("addcard", {"id" : cartes.id}) }}"></a>
+    <br>
+        <a href="{{ path("addcard", {"carte" : cartes.id, "collection" : collection.nom }) }}">{{ collection.nom }}</a>
+    <br>
+
+    {% endfor %}
+
+
+
+
+
 
 
 {% endblock %}
