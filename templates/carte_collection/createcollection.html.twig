@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello newCollectionController!{% endblock %}
+
+{% block body %}
+
+{{ form_start(formCollection)}}
+
+{{ form_row(formCollection.nom, {'attr': {'placeholder': "Nom"}}) }}
+
+<button type="submit">valider la collection</button>
+
+{{ form_end(formCollection)}}
+
+{% endblock %}

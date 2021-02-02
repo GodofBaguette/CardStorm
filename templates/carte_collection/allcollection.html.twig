@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AllCarteCollectionController!{% endblock %}
+
+{% block body %}
+
+    {% for allcollection in allcollections %}
+
+    <br>
+    <a href="{{ path("carte_collection", {"pseudo" : user.pseudo, "id" : allcollection.id}) }}">{{ allcollection.nom }}</a>
+    <br>
+
+    {% endfor %}
+
+{% endblock %}

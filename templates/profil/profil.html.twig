@@ -17,6 +17,11 @@
 <a href="{{ path("accueil") }}">Accueil</a>
 <br>
 <a href="{{ path("update", {"pseudo" : user.pseudo}) }}">modifier le profil</a>
+<br>
+<a href="{{ path("allcollection", {"pseudo" : user.pseudo}) }}">Mes Collections</a>
+<br>
+<a href="{{ path("createcollection", {"pseudo" : user.pseudo}) }}">Créer une collection</a>
+
 
 
 {% endblock %}
