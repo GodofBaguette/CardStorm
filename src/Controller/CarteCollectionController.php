@@ -37,8 +37,15 @@ class CarteCollectionController extends AbstractController
         ->getRepository(CarteCollection::class)
         ->find($id);
 
+        $carte = $collection->getCarte();
+
+        $user = $this->getUser();
+
+
             return $this->render('carte_collection/cartecollection.html.twig', [
                 'collections' => $collection,
+                'cartes' => $carte,
+                'user' => $user,
             ]);
     }
 
@@ -95,8 +102,42 @@ class CarteCollectionController extends AbstractController
             }
         }       
 
-        return $this->render('carte_collection/cartecollection.html.twig', [
-            'collections' => $collection,
+        return $this->redirectToRoute('accueil');
+    }
+
+    /**
+     * @Route("/profil/{pseudo}/collection/{id}/delete", name="delete_collection")
+     */
+    public function deleteCollection(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        
+        $collection = $entityManager->getRepository(CarteCollection::class)->find($id);
+
+        $entityManager->remove($collection);
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('profil', [
+            'pseudo' => $this->getUser()->getUsername()
+        ]);
+    }
+
+    /**
+     * @Route("/profil/{pseudo}/{collection}/{id}/delete", name="delete_carte")
+     */
+    public function deleteCarte(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        
+        $carte = $entityManager->getRepository(Carte::class)->find($id);
+
+        $entityManager->remove($carte);
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('profil', [
+            'pseudo' => $this->getUser()->getUsername()
         ]);
     }
 }
