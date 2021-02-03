@@ -41,8 +41,12 @@ class CarteController extends AbstractController
         ->getRepository(Carte::class)
         ->findBy(['jeu' => $jeu]);
 
+        $user = $this->getUser();
+        $collection = $user->getCarteCollection();
+
             return $this->render('carte/carte.html.twig', [
                 'cartes' => $carte,
+                'collections' => $collection,
             ]);
     }
 }
