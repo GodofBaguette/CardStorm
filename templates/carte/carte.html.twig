@@ -12,16 +12,6 @@
             <p>{{carte.nom}}</p><br>
             <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}" alt="image d'une carte Yu Gi Oh"><br>
         </a>
-
-        <label for="collec-select">Ajputer dans :</label>
-        <select name="carte" id="collec-select">
-            <option>Choix de la collection</option>
-            {% for collection in collections %}
-            <option><a href="{{ path("addcard", {"carte" : carte.id, "collection" : collection.nom }) }}">{{ collection.nom }}</a></option>
-            {% endfor %}
-        
-        </select>
-        
     {% elseif carte.jeu == 'db' %}
         <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
             <p>{{carte.nom}}</p><br>

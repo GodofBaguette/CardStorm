@@ -71,7 +71,7 @@ class CarteCollectionController extends AbstractController
             $entityManager->persist($collection);
             $entityManager->flush();
 
-            return $this->redirectToRoute('profil', [
+            return $this->redirectToRoute('allcollection', [
                 'pseudo' => $this->getUser()->getUsername()
             ]);
         }
@@ -102,7 +102,9 @@ class CarteCollectionController extends AbstractController
             }
         }       
 
-        return $this->redirectToRoute('accueil');
+        return $this->redirectToRoute('carte', [
+            'jeu' => $carte->getJeu()
+        ]);
     }
 
     /**
@@ -118,7 +120,7 @@ class CarteCollectionController extends AbstractController
 
         $entityManager->flush();
 
-        return $this->redirectToRoute('profil', [
+        return $this->redirectToRoute('allcollection', [
             'pseudo' => $this->getUser()->getUsername()
         ]);
     }
@@ -139,11 +141,14 @@ class CarteCollectionController extends AbstractController
                 $coll->removeCarte($carte);
                 $entityManager->persist($coll);
                 $entityManager->flush();
+
+                return $this->redirectToRoute('carte_collection', [
+                    'pseudo' => $this->getUser()->getUsername(),
+                    'id' => $coll->getId()
+                ]);
             }
         }
 
-        return $this->redirectToRoute('profil', [
-            'pseudo' => $this->getUser()->getUsername()
-        ]);
+        
     }
 }
