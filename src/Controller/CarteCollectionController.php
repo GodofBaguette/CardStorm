@@ -126,15 +126,21 @@ class CarteCollectionController extends AbstractController
     /**
      * @Route("/profil/{pseudo}/{collection}/{id}/delete", name="delete_carte")
      */
-    public function deleteCarte(int $id): Response
+    public function deleteCarte(int $id, string $collection): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
         
         $carte = $entityManager->getRepository(Carte::class)->find($id);
 
-        $entityManager->remove($carte);
+        $all = $this->getUser()->getCarteCollection();
 
-        $entityManager->flush();
+        foreach($all as $coll){
+            if($coll->getNom() === $collection){
+                $coll->removeCarte($carte);
+                $entityManager->persist($coll);
+                $entityManager->flush();
+            }
+        }
 
         return $this->redirectToRoute('profil', [
             'pseudo' => $this->getUser()->getUsername()
