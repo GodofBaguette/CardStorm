@@ -13,8 +13,10 @@ class AccueilController extends AbstractController
      */
     public function index(): Response
     {
+        $user = $this->getUser();
+        
         return $this->render('accueil/accueil.html.twig', [
-            'controller_name' => 'AccueilController',
+            'user' => $user,
         ]);
     }
 }

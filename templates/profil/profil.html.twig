@@ -21,6 +21,11 @@
 <a href="{{ path("allcollection", {"pseudo" : user.pseudo}) }}">Mes Collections</a>
 <br>
 <a href="{{ path("createcollection", {"pseudo" : user.pseudo}) }}">Créer une collection</a>
+<br>
+<br>
+{% if is_granted('ROLE_ADMIN') %}
+    <a href="/admin">Admin Space</a>
+{% endif %}
 
 
 
