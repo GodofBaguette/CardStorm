@@ -6,9 +6,12 @@ use App\Repository\CarteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=CarteRepository::class)
+ * @Vich\Uploadable
  */
 class Carte
 {
@@ -60,9 +63,16 @@ class Carte
     private $jeu;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
+     * @var string
      */
     private $nomphoto;
+
+    /**
+     * @Vich\UploadableField(mapping="featured_images", fileNameProperty="nomphoto")
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @ORM\ManyToMany(targetEntity=CarteCollection::class, mappedBy="carte")
@@ -185,6 +195,20 @@ class Carte
         $this->nomphoto = $nomphoto;
 
         return $this;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if($image) {
+            $this->updated_at = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 
     /**

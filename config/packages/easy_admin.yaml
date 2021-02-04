@@ -1,6 +1,20 @@
 easy_admin:
-    entities:
-#        # List the entity class name you want to manage
-        - App\Entity\Carte
-#        - App\Entity\Category
-        - App\Entity\User
+  site_name: 'Gestion du site'
+  formats:
+    datetime: 'd/m/Y à H:i'
+  entities:
+    Carte:
+      class: App\Entity\Carte
+      form:
+        fields:
+          - { property: 'nom' }
+          - { property: 'statistique' }
+          - { property: 'caracteristique' }
+          - { property: 'type' }
+          - { property: 'serie' }
+          - { property: 'numero' }
+          - { property: 'rarete' }
+          - { property: 'jeu' }
+          - { property: 'imageFile', type: 'vich_image', label: 'Image' }
+    Users:
+      class: App\Entity\User
