@@ -10,12 +10,12 @@
 
         <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
             <p>{{carte.nom}}</p><br>
-            <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}" alt="image d'une carte Yu Gi Oh"><br>
+            <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image d'une carte Yu Gi Oh"><br>
         </a>
     {% elseif carte.jeu == 'db' %}
         <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
             <p>{{carte.nom}}</p><br>
-            <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}" alt="image d'une carte dragon ball" width="400" ><br>
+            <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image d'une carte dragon ball" width="400" ><br>
         </a>
     {% else %}
         <h2>Aucun jeu correspondant</h2>
