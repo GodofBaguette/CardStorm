@@ -77,7 +77,8 @@ class CarteCollectionController extends AbstractController
         }
 
         return $this->render('carte_collection/createcollection.html.twig', [
-            'formCollection' => $form->createView()
+            'formCollection' => $form->createView(),
+            'user' => $user,
         ]);
     }
 

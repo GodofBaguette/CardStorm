@@ -8,7 +8,7 @@
 
         <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
             <p>{{carte.nom}}</p><br>
-            <img src="{{ asset('carte/'~ carte.nomphoto ~'.png') }}" width="400"><br>
+            <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" width="400"><br>
         </a>
         <a href="{{ path("delete_carte", {"pseudo" : user.pseudo, "collection" : collections.nom, "id" : carte.id }) }}">Supprimer de la collection</a>
 

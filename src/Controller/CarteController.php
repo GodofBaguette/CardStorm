@@ -29,6 +29,7 @@ class CarteController extends AbstractController
         return $this->render('carte/pagecarte.html.twig', [
             'cartes' => $carte,
             'collections' => $collection,
+            'user' => $user,
         ]);
     }
 
@@ -37,12 +38,16 @@ class CarteController extends AbstractController
      */
     public function show(string $jeu): Response
     {
+
+        $user = $this->getUser();
+
         $carte = $this->getDoctrine()
         ->getRepository(Carte::class)
         ->findBy(['jeu' => $jeu]);
 
             return $this->render('carte/carte.html.twig', [
                 'cartes' => $carte,
+                'user' => $user,
             ]);
     }
 }

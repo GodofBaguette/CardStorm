@@ -1,27 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
 
 {% block body %}
-<h1>CARD STORM</h1>
 
-<a href="{{ path("carte", {"jeu" : "db"}) }}">Dragon Ball</a>
-<br>
-<br>
-<a href="{{ path("carte", {"jeu" : "ygo"}) }}">Yu Gi Oh</a>
-<br>
-<br>
-{% if user %}
-    <a href="{{ path("profil", {"pseudo" : user.pseudo}) }}">Profil</a>
-    <br>
-    <br>
-    <a href="{{ path("app_logout") }}">Se Deconnecter</a>
-{% else %}   
-    <a href="{{ path("app_register") }}">Create account</a>
-    <br>
-    <br>
-    <a href="{{ path("app_login") }}">Se connecter</a>
-{% endif %}
-
-
+<div class="container">
+    <div class="row" id="accueil">
+        <div class="col" id="logodb">
+            <a href="{{ path("carte", {"jeu" : "db"}) }}"><img src="{{ asset('logos/db.png') }}" alt="image db" width="500"></a>
+        </div>
+        <div class="col" id="logoygo">
+            <a href="{{ path("carte", {"jeu" : "ygo"}) }}"><img src="{{ asset('logos/ygo.png') }}" alt="image ygo" width="500"></a>
+        </div>
+    </div>
+</div>
 {% endblock %}

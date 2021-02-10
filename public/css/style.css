@@ -1,0 +1,49 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+header{
+    background-color: #044A76; 
+}
+
+#titlehead{
+    margin-top: 20px;
+    font-family: 'Concert One', cursive;
+    font-size: 700%;
+}
+
+#logohead{
+    border-radius: 10%;
+    margin: 20px;
+}
+
+footer{
+    background-color: #044A76;
+}
+
+#navbar{
+    background-color: #213645;
+}
+
+body{
+    background-color: #485684;
+}
+
+#logodb{
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+#logoygo{
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+#discord{
+    margin: auto;
+}
+
+#logofooter{
+    border-radius: 10%;
+    margin: 20px;
+}
