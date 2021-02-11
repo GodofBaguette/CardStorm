@@ -23,14 +23,22 @@ class CarteController extends AbstractController
         ->find($id);
 
         $user = $this->getUser();
-        $collection = $user->getCarteCollection();
-       
 
-        return $this->render('carte/pagecarte.html.twig', [
-            'cartes' => $carte,
-            'collections' => $collection,
-            'user' => $user,
-        ]);
+        if(is_null($user)) {
+            return $this->render('carte/pagecarte.html.twig', [
+                'cartes' => $carte,
+                'user' => $user,
+            ]);
+        }else{
+            $collection = $user->getCarteCollection();
+        
+
+            return $this->render('carte/pagecarte.html.twig', [
+                'cartes' => $carte,
+                'collections' => $collection,
+                'user' => $user,
+            ]);
+        }
     }
 
     /**

@@ -1,35 +1,51 @@
 body{
     font-family: 'Roboto', sans-serif;
     color: white;
+    background-color: #485684;
 }
 
+
+
+/*header*/
 header{
     background-color: #044A76; 
 }
 
 #titlehead{
-    margin-top: 20px;
-    font-family: 'Concert One', cursive;
-    font-size: 700%;
+    margin-top: 50px;
+    font-family: 'Concert One', cursive;    
 }
 
 #logohead{
     border-radius: 10%;
-    margin: 20px;
-}
-
-footer{
-    background-color: #044A76;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #navbar{
     background-color: #213645;
 }
 
-body{
-    background-color: #485684;
+
+
+/*footer*/
+footer{
+    background-color: #044A76;
+    border-top: 10px solid #213645;
 }
 
+#discord{
+    margin: auto;
+}
+
+#logofooter{
+    border-radius: 10%;
+    margin-top: 20px;
+}
+
+
+
+/*Acuueil*/
 #logodb{
     margin-top: 100px;
     margin-bottom: 150px;
@@ -39,11 +55,24 @@ body{
     margin-top: 100px;
     margin-bottom: 150px;
 }
-#discord{
-    margin: auto;
+
+
+/*toutes les cartes*/
+
+#nomcarte{
+    text-transform: uppercase;
+    color: white;
+    margin-top: 10px;
 }
 
-#logofooter{
-    border-radius: 10%;
-    margin: 20px;
+#colcarte{
+    background-color: #044A76;
+    border: solid 15px #485684;
+}
+
+/*page pour chaque carte*/
+
+#imgcarte{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

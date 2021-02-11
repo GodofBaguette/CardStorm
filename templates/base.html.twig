@@ -20,10 +20,10 @@
             <div class="container" id="bghead">
                 <div class="row">
                     <div class="col">
-                        <img id="logohead" src="{{ asset('logos/logo.png') }}" alt="image logo" width="300">
+                        <img id="logohead" src="{{ asset('logos/logo.png') }}" alt="image logo" width="300" class="img-fluid">
                     </div>
                     <div class="col">
-                        <h1 id="titlehead">CARDSTORM</h1>
+                        <h1 id="titlehead" class="display-1">CARDSTORM</h1>
                     </div>
                 </div>
             </div>
@@ -49,17 +49,16 @@
 
         {% block footer %}
         <footer>
-            <div class="container" id="bghead">
+            <div class="container">
                 <div class="row">
                     <div class="col">
-                        <img id="logofooter" src="{{ asset('logos/logo.png') }}" alt="cardstorm logo" width="300">
+                        <img id="logofooter" src="{{ asset('logos/logo.png') }}" alt="cardstorm logo" width="300" class="img-fluid">
                     </div>
                     <div class="col">
                         <nav class="navbar navbar-dark">
                             <ul class="navbar-nav">
                                 <li class="nav-item"><a class="nav-link" href="{{ path("accueil") }}">ACCUEIL</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#">PRÉSENTATION</a></li>
-                                <li class="nav-item"><a class="nav-link" href="https://discord.gg/wsyrkCddwZ">DISCORD</a></li>
                                 {% if user %}
                                     <li class="nav-item"><a class="nav-link" href="{{ path("profil", {"pseudo" : user.pseudo}) }}">PROFIL</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ path("app_logout") }}">DECONNECTION</a></li>
@@ -71,7 +70,7 @@
                         </nav>
                     </div>
                     <div class="col" id="discord">
-                        <a href="https://discord.gg/wsyrkCddwZ"><img src="{{ asset('logos/discord.png') }}" alt="logo discord" width="120"></a>
+                        <a href="https://discord.gg/wsyrkCddwZ"><img src="{{ asset('logos/discord.png') }}" alt="logo discord" width="120" class="img-fluid"></a>
                     </div>
                 </div>
             </div>
