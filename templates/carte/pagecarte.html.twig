@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarteController plus!{% endblock %}
+{% block title %}CARDSTORM{% endblock %}
 
 {% block body %}
 
@@ -11,10 +11,10 @@
             <img src="{{ asset('carte/'~ cartes.nomphoto ~'') }}" alt="image d'une carte Yu Gi Oh" style="width:400px; height:auto" class="img-fluid d-block mx-auto" id="imgcarte">
         </div>
         <div class="col-6">
-            <p>{{ cartes.statistique }}</p>
-            <p>{{ cartes.type }}</p>
-            <p>{{ cartes.caracteristique }}</p>
-            <p>{{ cartes.serie }} / {{ cartes.numero }} {{ cartes.rarete }}</p>
+            <p id="stats">{{ cartes.statistique }}</p>
+            <p id="stats">{{ cartes.type }}</p>
+            <p id="stats">{{ cartes.caracteristique }}</p>
+            <p id="stats">{{ cartes.serie }} / {{ cartes.numero }} {{ cartes.rarete }}</p>
         </div>
     </div>
 </div>
@@ -23,17 +23,20 @@
 
 
 {% if user %}
-
-    <h3>Ajouter à :</h3>
-            
+<div class="container">
+    <div class="row" id="colcarte">
+        <div class="col-12">
+            <h3 id="ajouter">Ajouter à une collection :</h3>
+        </div>        
         {% for collection in collections %}
-
-        <br>
-            <a href="{{ path("addcard", {"carte" : cartes.id, "collection" : collection.nom }) }}">{{ collection.nom }}</a>
-        <br>
-
+            <div class="col-4" id="listecolcarte">
+                <a class="nav-link" href="{{ path("addcard", {"carte" : cartes.id, "collection" : collection.nom }) }}">
+                    <button type="button" class="btn btn-dark">{{ collection.nom }}</button>
+                </a>
+            </div>
         {% endfor %}
-
+    </div>    
+</div>
 {% endif %}
 
 

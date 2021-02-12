@@ -76,3 +76,16 @@ footer{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+#stats{
+    background-color: #213645;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+
+#ajouter{
+    font-weight: bold;
+    padding: 10px;
+}
+
