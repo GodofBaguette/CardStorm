@@ -4,12 +4,18 @@
 
 {% block body %}
 
-{{ form_start(formCollection)}}
+<div class="container" id="form">
+    <h1>CREER UNE COLLECTION</h1>
 
-{{ form_row(formCollection.nom, {'attr': {'placeholder': "Nom"}}) }}
+    {{ form_start(formCollection)}}
 
-<button type="submit">valider la collection</button>
+        {{ form_row(formCollection.nom, {
+            'attr': {'class': "form-control"},
+            'label_attr': {'id': "fieldform"}
+        }) }}
 
-{{ form_end(formCollection)}}
+        <button type="submit" class="btn btn-lg btn-dark" id="fieldform">valider</button>
 
+    {{ form_end(formCollection)}}
+</div>
 {% endblock %}

@@ -1,34 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ user.pseudo }}{% endblock %}
+{% block title %}CARDSTORM{% endblock %}
 
 {% block body %}
 
+<div class="container.fluid" id="salut">
+    <h1 class="text-center">Salut {{ user.prenom }} !</h1>
+</div>
 
-<h3>{{ user.pseudo }}</h3>
-<br>
-<h3>{{ user.email }}</h3>
-<br>
-<h3>{{ user.nom }}</h3>
-<br>
-<h3>{{ user.prenom }}</h3>
-<br>
-<br>
-<a href="{{ path("accueil") }}">Accueil</a>
-<br>
-<a href="{{ path("update", {"pseudo" : user.pseudo}) }}">modifier le profil</a>
-<br>
-<a href="{{ path("allcollection", {"pseudo" : user.pseudo}) }}">Mes Collections</a>
-<br>
-<a href="{{ path("createcollection", {"pseudo" : user.pseudo}) }}">Créer une collection</a>
-<br>
-<br>
-<a href="{{ path("app_logout") }}">Se Deconnecter</a>
-<br>
-<br>
-{% if is_granted('ROLE_ADMIN') %}
-    <a href="/admin">Admin Space</a>
-{% endif %}
+<div class="container.fluid" id="menuprofil">
+    <div class="row">
+        <div class="col-6 text-center">
+            <a href="{{ path("allcollection", {"pseudo" : user.pseudo}) }}"><button class="btn btn-lg btn-dark">Mes Collections</button></a>
+        </div>
+        <div class="col-6 text-center">
+            <a href="{{ path("createcollection", {"pseudo" : user.pseudo}) }}"><button class="btn btn-lg btn-dark">Créer une collection</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="container.fluid">
+        <h3 class="w-50 mt-2 p-2" id="infoprofil">PSEUDO : {{ user.pseudo }}</h3>
+        <h3 class="w-50 mt-2 p-2" id="infoprofil">EMAIL : {{ user.email }}</h3>
+        <h3 class="w-50 mt-2 p-2" id="infoprofil">NOM PRENOM : {{ user.nom }} {{ user.prenom }}</h3>
+</div>
+
+<div class="container.fluid" id="menuprofil">
+    <div class="row">        
+        <div class="col-6 text-center">
+            <a href="{{ path("update", {"pseudo" : user.pseudo}) }}"><button class="btn btn-lg btn-dark">Modifier le profil</button></a>
+        </div>
+        <div class="col-6 text-center">
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="/admin"><button class="btn btn-lg btn-dark">Espace Administrateur</button></a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 
 

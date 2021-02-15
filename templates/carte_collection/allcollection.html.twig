@@ -4,12 +4,17 @@
 
 {% block body %}
 
-    {% for allcollection in allcollections %}
+<div class="container" id="titlecollection">
+    <h1>MES COLLECTIONS</h1>
+</div>
 
-    <br>
-    <a href="{{ path("carte_collection", {"pseudo" : user.pseudo, "id" : allcollection.id}) }}">{{ allcollection.nom }}</a>
-    <br>
-
-    {% endfor %}
-
+<div class="container" id="bgcollection">
+    <div class="row">
+        {% for allcollection in allcollections %}
+        <div class="col-4">
+            <a class="nav-link" id="nomcollection" href="{{ path("carte_collection", {"pseudo" : user.pseudo, "id" : allcollection.id}) }}"><button class="btn btn-lg btn-dark">{{ allcollection.nom }}</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

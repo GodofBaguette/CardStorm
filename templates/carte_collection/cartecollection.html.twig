@@ -1,21 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CarteCollectionController!{% endblock %}
+{% block title %}CARDSTORM{% endblock %}
 
 {% block body %}
 
-    {% for carte in cartes %}
+<div class="container">
+    <div class="row">
+        {% for carte in cartes %}
+            <div class"col-lg-4" id="colcarte">
+                <a class="nav-link" href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
+                    <h5 id="nomcarte" class="text-center">{{carte.nom}}</h5>
+                    <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image carte" style="width:300px; height:auto" class="img-fluid d-block mx-auto">
+                </a>
+                <a class="nav-link" href="{{ path("delete_carte", {"pseudo" : user.pseudo, "collection" : collections.nom, "id" : carte.id }) }}">
+                    <h5 id="nomcarte" class="text-center" >Supprimer de la collection</h5>
+                </a>
+            </div>
+        {% endfor %}
+   </div>
+</div>
 
-        <a href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
-            <p>{{carte.nom}}</p><br>
-            <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" width="400"><br>
-        </a>
-        <a href="{{ path("delete_carte", {"pseudo" : user.pseudo, "collection" : collections.nom, "id" : carte.id }) }}">Supprimer de la collection</a>
 
-    {% endfor %}
-
-    <br>
-    <br>
-    <a href="{{ path("delete_collection", {"pseudo" : user.pseudo, "id" : collections.id }) }}">Supprimer la collection</a>
-
+<div class="text-center" id="deletecol">    
+    <a href="{{ path("delete_collection", {"pseudo" : user.pseudo, "id" : collections.id }) }}">
+    <button class="btn btn-lg btn-dark">Supprimer la collection</button>
+    </a>
+</div>
 {% endblock %}

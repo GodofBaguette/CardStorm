@@ -3,20 +3,40 @@
 {% block title %}Hello new Costumer!{% endblock %}
 
 {% block body %}
-<h1>Modifier mon profil :</h1><br>
+<div class="container" id="form">
+    <h1>Modifier mon profil :</h1><br>
 
-{{ form_start(formUser)}}
+    {{ form_start(formUser)}}
 
-{{ form_row(formUser.nom, {'attr': {'placeholder': "Nom"}}) }}
-{{ form_row(formUser.prenom, {'attr': {'placeholder': "Prenom"}}) }}
-{{ form_row(formUser.email, {'attr': {'placeholder': "Email"}}) }}
-{{ form_row(formUser.pseudo, {'attr': {'placeholder': "pseudo"}}) }}
-{{ form_row(formUser.password, {'attr': {'placeholder': "Mot de Passe"}}) }}
+        {{ form_row(formUser.nom, {
+            'attr': {'class': "form-control"},
+            'label_attr': {'id': "fieldform"}
+        }) }}
 
+        {{ form_row(formUser.prenom, {
+            'attr': {'class': "form-control"},
+            'label_attr': {'id': "fieldform"}
+        }) }}
 
-<button type="submit">valider les modification</button>
+        {{ form_row(formUser.email, {
+            'attr': {'class': "form-control"},
+            'label_attr': {'id': "fieldform"}
+        }) }}
 
-{{ form_end(formUser)}}
+        {{ form_row(formUser.pseudo, {
+            'attr': {'class': "form-control"},
+            'label_attr': {'id': "fieldform"}
+        }) }}
 
+        {{ form_row(formUser.password, {
+            'attr': {'class': "form-control"},
+            label: 'Password',
+            'label_attr': {'id': "fieldform"}
+        }) }}
+
+        <button type="submit" class="btn btn-lg btn-dark" id="fieldform">valider les modification</button>
+
+    {{ form_end(formUser)}}
+</div>
 
 {% endblock %}

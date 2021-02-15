@@ -89,3 +89,62 @@ footer{
     padding: 10px;
 }
 
+/*formulaire*/
+
+#form{
+    background-color: #044A76;
+    padding: 15px;
+    width:50%;
+    margin:auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: solid 7px #213645;
+    border-radius: 30px;
+}
+
+#fieldform{
+    margin-top: 30px;
+}
+
+/*page collection*/
+
+#titlecollection{
+    background-color: #044A76;
+    margin: auto;
+    padding: 10px;
+    border: solid 10px #485684;
+}
+
+#nomcollection{
+    color: white;
+}
+
+#bgcollection{
+    background-color: #044A76;
+    padding: 10px;
+    border: solid 10px #485684;
+}
+
+/*page de profil*/
+
+#menuprofil{
+    background-color: #044A76;
+    padding: 10px;
+    border: solid 10px #485684;
+}
+
+#infoprofil{
+    background-color: #044A76;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#salut{
+    background-color: #044A76;
+    margin: 10px;
+}
+ /*page carte collection*/
+
+ #deletecol{
+    margin: 10px;
+ }

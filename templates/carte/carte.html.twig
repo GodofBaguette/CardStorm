@@ -7,21 +7,21 @@
 <div class="container">
     <div class="row">
         {% for carte in cartes %}
-                <div class="col-lg-4" id="colcarte">
-                    {% if carte.jeu == 'ygo' %}
-                        <a class="nav-link" href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
-                            <h5 id="nomcarte" class="text-center">{{carte.nom}}</h5><br>
-                            <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image d'une carte Yu Gi Oh" style="width:300px; height:auto" class="img-fluid d-block mx-auto"><br>
-                        </a>
-                    {% elseif carte.jeu == 'db' %}
-                        <a class="nav-link" href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
-                            <h5 id="nomcarte" class="text-center">{{carte.nom}}</h5><br>
-                            <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image d'une carte dragon ball" style="width:300px; height:auto" class="img-fluid d-block mx-auto"><br>
-                        </a>
-                    {% else %}
-                        <h2>Aucun jeu correspondant</h2>
-                    {% endif %}
-                </div>
+            <div class="col-lg-4" id="colcarte">
+                {% if carte.jeu == 'ygo' %}
+                    <a class="nav-link" href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
+                        <h5 id="nomcarte" class="text-center">{{carte.nom}}</h5>
+                        <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image d'une carte Yu Gi Oh" style="width:300px; height:auto" class="img-fluid d-block mx-auto">
+                    </a>
+                {% elseif carte.jeu == 'db' %}
+                    <a class="nav-link" href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
+                        <h5 id="nomcarte" class="text-center">{{carte.nom}}</h5>
+                        <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image d'une carte dragon ball" style="width:300px; height:auto" class="img-fluid d-block mx-auto">
+                    </a>
+                {% else %}
+                    <h2>Aucun jeu correspondant</h2>
+                {% endif %}
+            </div>
         {% endfor %}
     </div>
 </div>
