@@ -3,7 +3,7 @@
 {% block title %}CARDSTORM{% endblock %}
 
 {% block body %}
-
+{# menu mes collection et création de collection #}
 <div class="container.fluid" id="salut">
     <h1 class="text-center">Salut {{ user.prenom }} !</h1>
 </div>
@@ -18,13 +18,13 @@
         </div>
     </div>
 </div>
-
+{# infos utilisateur #}
 <div class="container.fluid">
         <h3 class="w-50 mt-2 p-2" id="infoprofil">PSEUDO : {{ user.pseudo }}</h3>
         <h3 class="w-50 mt-2 p-2" id="infoprofil">EMAIL : {{ user.email }}</h3>
         <h3 class="w-50 mt-2 p-2" id="infoprofil">NOM PRENOM : {{ user.nom }} {{ user.prenom }}</h3>
 </div>
-
+{# menu modification du profil et espace admin si le rôle est attribué #}
 <div class="container.fluid" id="menuprofil">
     <div class="row">        
         <div class="col-6 text-center">

@@ -23,7 +23,7 @@ class RegistrationController extends AbstractController
     {
         
     }
-
+    //création de compte
     /**
      * @Route("/register", name="app_register")
      */

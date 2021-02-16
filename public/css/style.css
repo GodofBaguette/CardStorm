@@ -148,3 +148,19 @@ footer{
  #deletecol{
     margin: 10px;
  }
+
+/*page de presentation*/
+
+#titlepre{
+    background-color: #044A76;
+    margin-top: 10px;
+    border: solid 5px #213645;
+}
+
+#textpre{
+    background-color: #044A76;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: solid 5px #213645;
+}

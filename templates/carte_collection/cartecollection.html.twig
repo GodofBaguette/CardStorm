@@ -3,11 +3,11 @@
 {% block title %}CARDSTORM{% endblock %}
 
 {% block body %}
-
+{# affichage de toutes les cartes d'une collection #}
 <div class="container">
     <div class="row">
         {% for carte in cartes %}
-            <div class"col-lg-4" id="colcarte">
+            <div class="col-lg-4" id="colcarte">
                 <a class="nav-link" href="{{ path("carte_page", {"jeu" : carte.jeu, "id" : carte.id }) }}">
                     <h5 id="nomcarte" class="text-center">{{carte.nom}}</h5>
                     <img src="{{ asset('carte/'~ carte.nomphoto ~'') }}" alt="image carte" style="width:300px; height:auto" class="img-fluid d-block mx-auto">
@@ -20,7 +20,7 @@
    </div>
 </div>
 
-
+{# boutton de suppression de la carte de la collection #}
 <div class="text-center" id="deletecol">    
     <a href="{{ path("delete_collection", {"pseudo" : user.pseudo, "id" : collections.id }) }}">
     <button class="btn btn-lg btn-dark">Supprimer la collection</button>

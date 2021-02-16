@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CarteCollectionController extends AbstractController
 {
+    //Affiche toutes les collections de l'utilisateur
     /**
      * @Route("/profil/{pseudo}/collection", name="allcollection")
      */
@@ -28,6 +29,7 @@ class CarteCollectionController extends AbstractController
         ]);
     }
 
+    //affiche toute les carte d'une collection
     /**
      * @Route("/profil/{pseudo}/collection/{id}", name="carte_collection")
      */
@@ -49,6 +51,8 @@ class CarteCollectionController extends AbstractController
             ]);
     }
 
+
+    //créer une collection
     /**
      * @Route("/profil/{pseudo}/createcollection", name="createcollection")
      */
@@ -82,6 +86,7 @@ class CarteCollectionController extends AbstractController
         ]);
     }
 
+    //ajouter une carte a une collection
     /**
      * @Route("/profil/{carte}/{collection}", name="addcard")
      */
@@ -108,6 +113,7 @@ class CarteCollectionController extends AbstractController
         ]);
     }
 
+    //supprime une collection
     /**
      * @Route("/profil/{pseudo}/collection/{id}/delete", name="delete_collection")
      */
@@ -126,6 +132,7 @@ class CarteCollectionController extends AbstractController
         ]);
     }
 
+    //supprime une carte de la collection
     /**
      * @Route("/profil/{pseudo}/{collection}/{id}/delete", name="delete_carte")
      */

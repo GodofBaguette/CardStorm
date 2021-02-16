@@ -19,4 +19,16 @@ class AccueilController extends AbstractController
             'user' => $user,
         ]);
     }
+
+    /**
+     * @Route("/presentation", name="presentation")
+     */
+    public function presentation(): Response
+    {
+        $user = $this->getUser();
+        
+        return $this->render('presentation/presentation.html.twig', [
+            'user' => $user,
+        ]);
+    }
 }

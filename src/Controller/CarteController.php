@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CarteController extends AbstractController
 {
+    //affiche la page d'information d'une carte
     /**
      * @Route("/carte/{jeu}/{id}", name="carte_page")
      */
@@ -41,6 +42,7 @@ class CarteController extends AbstractController
         }
     }
 
+    //affiche toute les cartes
     /**
      * @Route("/carte/{jeu}", name="carte")
      */

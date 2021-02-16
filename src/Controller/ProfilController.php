@@ -12,6 +12,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class ProfilController extends AbstractController
 {
+
+    //fonction d'&ffichage du profil
     /**
      * @Route("/profil/{pseudo}", name="profil")
      */
@@ -24,6 +26,7 @@ class ProfilController extends AbstractController
         ]);
     }
 
+    //fonction modification du profil
     /**
      * @Route("/profil/{pseudo}/update", name="update")
      */
