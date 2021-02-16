@@ -28,7 +28,7 @@ class ProfilController extends AbstractController
 
     //fonction modification du profil
     /**
-     * @Route("/profil/{pseudo}/update", name="update")
+     * @Route("/{pseudo}/update", name="update")
      */
     public function update(Request $request, UserPasswordEncoderInterface $encode): Response
     {
@@ -54,7 +54,8 @@ class ProfilController extends AbstractController
         }
 
         return $this->render('profil/update.html.twig', [
-            'formUser' => $form->createView()
+            'formUser' => $form->createView(),
+            'user' => $user
         ]);
     }
 }
