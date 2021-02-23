@@ -17,7 +17,7 @@ class CarteController extends AbstractController
     /**
      * @Route("/carte/{jeu}/{id}", name="carte_page")
      */
-    public function carte(Request $request, int $id): Response
+    public function carte(int $id): Response
     {
         $carte = $this->getDoctrine()
         ->getRepository(Carte::class)
